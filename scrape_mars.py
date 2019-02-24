@@ -20,28 +20,6 @@ def scrape_mars_latest_news():
     try:
         browser = init_browser()   
         
-        mars_news_url = "https://mars.nasa.gov/news/"
-        browser.visit(mars_news_url)
-        
-        html = browser.html
-        
-        soup = BeautifulSoup(html, "html.parser")
-        
-        latest_news_title = soup.find("div", class_="content_title").text
-        latest_news_para = soup.find("div", class_="article_teaser_body").text
-        
-        mars_info["news_title"] = latest_news_title
-        mars_info["news_paragraph"] = latest_news_para
-        
-        return mars_info
-    
-    finally:
-        browser.quit()
-
-def scrape_mars_latest_news():
-    try:
-        browser = init_browser()   
-        
         latest_news_url = "https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest"
         browser.visit(latest_news_url)
         
