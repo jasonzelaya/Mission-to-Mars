@@ -170,7 +170,7 @@ def scrape_mars_hemispheres():
 
         mars_info['hemisphere_img_urls'] = hemisphere_img_urls
 
-        # Return mars_info dictionary
+        # Return mars_data dictionary
         return mars_info
     
     finally:
