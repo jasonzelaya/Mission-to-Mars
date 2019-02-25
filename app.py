@@ -7,6 +7,8 @@ import config
 import os
 
 # Establish connection
+conn = "mongodb://localhost:27017"
+client = pymongo.MongoClient(conn)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 

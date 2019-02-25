@@ -50,7 +50,7 @@ def scrape_mars_featured_image():
  
         html_image = browser.html
 
-        soup = BeautifulSoup(html_image, 'html.parser')
+        soup = BeautifulSoup(html_image, "html.parser")
 
         # Retrieve background image url
         featured_image_url = soup.find("article")["style"].replace("background-image: url(","").replace(");", "")[1:-1]
@@ -60,10 +60,10 @@ def scrape_mars_featured_image():
         # Concatenate website url with scraped route
         featured_image_url = main_url + featured_image_url
 
-        featured_image_url 
+        featured_image_url = "https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA19041-1920x1200.jpg"
 
         # Dictionary entry
-        mars_info['featured_image_url'] = featured_image_url 
+        mars_info["featured_image_url"] = featured_image_url 
         
         return mars_info
     
@@ -168,7 +168,7 @@ def scrape_mars_hemispheres():
             # Append the retrieved information into a list of dictionaries
             hemisphere_img_urls.append({"title" : title, "img_url" : img_url})
 
-        mars_info['hemisphere_img_urls'] = hemisphere_img_urls
+        mars_info["hemisphere_img_urls"] = hemisphere_img_urls
 
         # Return mars_data dictionary
         return mars_info
