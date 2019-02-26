@@ -90,8 +90,8 @@ def scrape_mars_weather():
         # Retrieve all elements that contains news title in a specified range and look for entries that display weather related words to exclude non weather related tweets
         for tweet in latest_weather_tweets:
             mars_weather = tweet.find("p").text
-            if "Sol" and "pressure" in weather_tweet:
-                print(weather_tweet)
+            if "Sol" and "pressure" in mars_weather:
+                print(mars_weather)
                 break
             else:
                 pass
@@ -120,7 +120,7 @@ def scrape_mars_facts():
     mars_facts_df.set_index("description", inplace=True)
 
     # Save html code
-    mars_facts_df.to_html()
+    data = mars_facts_df.to_html()
 
     # Dictionary entry
     mars_info["mars_facts"] = data
