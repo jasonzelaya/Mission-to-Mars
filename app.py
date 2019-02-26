@@ -8,7 +8,7 @@ import os
 
 app = Flask(__name__)
 
-# Establish connection
+# Establish connections
 conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
@@ -35,4 +35,4 @@ def scrape():
     return redirect("/", code=302)
 
 if __name__ == "__main__": 
-    app.run(debug= True)
+    app.run(debug=True)
